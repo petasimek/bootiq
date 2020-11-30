@@ -14,7 +14,8 @@ class BaseController extends IController
 	public function __construct()
 	{
 		parent::__construct();
-		$this->cacheDriver = new CacheDriver(new FileStorage('./temp/cache/'));
+		//TODO maybe path from env or etc...
+		$this->cacheDriver = new CacheDriver(new FileStorage(__DIR__ . '/../../temp/cache/'));
 	}
 
 	public function getProductCache(): CacheDriver
